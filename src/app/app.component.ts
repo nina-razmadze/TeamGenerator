@@ -15,6 +15,7 @@ export class AppComponent {
   }
   addMember() {
     if (!this.newMemberName) {
+      this.errorMessage = `Name can't be empty `;
       return;
     }
     this.members.push(this.newMemberName);
