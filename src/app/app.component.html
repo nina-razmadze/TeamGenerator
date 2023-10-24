@@ -5,7 +5,8 @@
       <li *ngFor="let member of members">{{member}}</li>
     </ul>
     <div class="add-members-container">
-      <input #addMemberInput type="text" placeholder="Name" (input)="onInput(addMemberInput.value)" />
+      <input #addMemberInput type="text" placeholder="Name" (input)="onInput(addMemberInput.value)"
+        [value]="newMemberName" />
       <button (click)="addMember()">Add</button>
     </div>
 
