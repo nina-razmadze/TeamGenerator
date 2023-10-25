@@ -46,6 +46,8 @@ export class AppComponent {
           }
         }
       }
+      this.members = [];
+      this.numberOfTeams = '';
     }
   }
 }
