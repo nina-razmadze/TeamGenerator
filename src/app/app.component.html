@@ -4,6 +4,7 @@
     <ul class="list">
       <li *ngFor="let member of members">{{member}}</li>
     </ul>
+
     <div class="add-members-container">
       <input #addMemberInput type="text" placeholder="Name" (input)="onInput(addMemberInput.value)"
         [value]="newMemberName" />
@@ -11,9 +12,12 @@
     </div>
 
     <div class="input-container">
-      <input type="number" placeholder="# of teams" />
-      <button>Generate</button>
+      <input #numberOfTeamsInput type="number" placeholder="# of teams"
+        (input)="onNumberOfTeamsInput(numberOfTeamsInput.value)" [value]="numberOfTeams" />
+      <button (click)="onGenerate()">Generate</button>
     </div>
+
     <p *ngIf="errorMessage" class="Error-message">{{errorMessage}}</p>
+    <p *ngIf="TeamErrorMessage" class="Error-message">{{TeamErrorMessage}}</p>
   </div>
 </div>
