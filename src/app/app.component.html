@@ -18,7 +18,12 @@
     </div>
 
     <p *ngIf="errorMessage" class="Error-message">{{errorMessage}}</p>
-    <p *ngIf="TeamErrorMessage" class="Error-message">{{TeamErrorMessage}}</p>
   </div>
-  <li *ngFor="let member of teams" class="list">{{member}}</li>
-</div>
+  <div class="teams-container" *ngIf="teams.length">
+    <div class="team-container" *ngFor="let team of teams">
+      <h3>Team 3</h3>
+      <ul>
+        <li *ngFor="let member of team">{{member}}</li>
+      </ul>
+    </div>
+  </div>
