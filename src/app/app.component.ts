@@ -10,7 +10,7 @@ export class AppComponent {
   members: string[] = [];
   errorMessage = '';
   TeamErrorMessage = '';
-  numberOfTeams = 0;
+  numberOfTeams: number | '' = '';
 
   onInput(member: string) {
     this.newMemberName = member;
@@ -29,12 +29,14 @@ export class AppComponent {
   }
 
   onGenerate() {
-    this.numberOfTeams = this.members.length / this.numberOfTeams;
-    if (this.numberOfTeams < 1) {
-      this.TeamErrorMessage = `The number of people is less than the number of the Teams`;
+    if (!this.numberOfTeams || this.numberOfTeams <= 0) {
       return;
     } else {
-      console.log(this.numberOfTeams);
+      const allMembers = [...this.members];
+      for (let i = 0; i < this.numberOfTeams; i++) {
+        const randomIndex = Math.floor(Math.random() * allMembers.length);
+        const member = allMembers.splice(randomIndex, 1)[0];
+      }
     }
   }
 }
