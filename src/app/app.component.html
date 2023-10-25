@@ -20,4 +20,5 @@
     <p *ngIf="errorMessage" class="Error-message">{{errorMessage}}</p>
     <p *ngIf="TeamErrorMessage" class="Error-message">{{TeamErrorMessage}}</p>
   </div>
+  <li *ngFor="let member of teams" class="list">{{member}}</li>
 </div>
